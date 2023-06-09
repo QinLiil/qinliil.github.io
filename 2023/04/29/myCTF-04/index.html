@@ -24,7 +24,7 @@
 
   
 
-  <title>小伙伴 | QingLi</title>
+  <title>QingLi</title>
 
   
 
@@ -47,7 +47,7 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
     <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
   
@@ -97,56 +97,101 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">小伙伴</h1>
-        
-          <h2 class="title-sub-wrap">是你，靓仔！</h2>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap"></h1>
+          <h2 class="title-sub-wrap">
+            <strong>QingLi</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2023-04-29T12:11:22.040Z" itemprop="datePublished">2023-04-29</time>
+          </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h1 id="myCTF-x2F-04"><a href="#myCTF-x2F-04" class="headerlink" title="myCTF&#x2F;04"></a>myCTF&#x2F;04</h1><h3 id="对方不想和你说话并向你扔了一段代码"><a href="#对方不想和你说话并向你扔了一段代码" class="headerlink" title="对方不想和你说话并向你扔了一段代码"></a>对方不想和你说话并向你扔了一段代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&quot;Content-type:text/html;charset=utf-8&quot;</span>);</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">include</span> <span class="string">&#x27;flag.php&#x27;</span>;   </span><br><span class="line"><span class="variable">$b</span>=<span class="string">&#x27;ssAEDsssss&#x27;</span>;   </span><br><span class="line"><span class="title function_ invoke__">extract</span>(<span class="variable">$_GET</span>);     </span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$a</span>))&#123;        </span><br><span class="line">    <span class="variable">$c</span>=<span class="title function_ invoke__">trim</span>(<span class="title function_ invoke__">file_get_contents</span>(<span class="variable">$b</span>));</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$a</span>==<span class="variable">$c</span>)&#123; </span><br><span class="line">       <span class="keyword">echo</span> <span class="variable">$myFlag</span>;     </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;       </span><br><span class="line">       <span class="keyword">echo</span><span class="string">&#x27;继续努力，相信flag离你不远了&#x27;</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125; </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>关键函数：extract()</p>
+<p>该函数会把传入的值转换为变量如传入a&#x3D;1就会转换为$a&#x3D;1</p>
+<p>在这里当我们传入的值<code>a=&amp;b=</code>时会创建一个$a&#x3D;0 $b&#x3D;0的变量并覆盖变量$b</p>
+<p>当在判断时$a与$b都为空就会输出flag</p>
+
       </section>
 
       
       
-        <section class="page-link-container">
+        <nav class="article-nav">
           
-            <div class="link-item layout-padding">
-              <a href="https://x0blank.github.io/" title="x0blank" class="content-padding--primary soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
-                
-                <img src="https://avatars.githubusercontent.com/u/95840323?v=4" alt="x0blank" class="soft-size--round soft-style--box">
-                
-                <div>
-                  <h4 class="text-ellipsis">x0blank</h4>
-                  
-                  <p class="text-ellipsis">海内存知己，天涯若比邻</p>
-                  
-                </div>
-              </a>
-            </div>
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2023/04/29/myCTF-05/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">(no title)</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
           
-        </section>
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2023/04/29/myCTF-01/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">myCTF/01</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
       
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -183,6 +228,8 @@
     </div>
   </div>
 </section>
+
+      
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -264,7 +311,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
