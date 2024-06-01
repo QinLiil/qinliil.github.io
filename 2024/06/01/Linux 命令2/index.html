@@ -1,0 +1,866 @@
+<!DOCTYPE html><html lang="zh-CH" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>linux | 倾黎</title><meta name="keywords" content="linux"><meta name="author" content="倾黎"><meta name="copyright" content="倾黎"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="linux"><meta name="application-name" content="linux"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="linux"><meta property="og:url" content="https://qinliil.github.io/2024/06/01/Linux%20%E5%91%BD%E4%BB%A42/index.html"><meta property="og:site_name" content="倾黎"><meta property="og:description" content="Linux 命令2  clear 清屏 文件查询linux 分页查询more -c [文件名] more -c -3 [文件名]  进行分页显示 刷新之前内容  file 查看文件类型file [文件所在路径] 文件摘选head -n3 [文件名]  查看文件前三行  tail -n3 [文件名]"><meta property="og:locale" content="zh-CH"><meta property="og:image" content="https://qinliil.github.io/img/preview.jpg"><meta property="article:author" content="倾黎"><meta property="article:tag" content="Linux配置,Windows配置,网络安全,"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://qinliil.github.io/img/preview.jpg"><meta name="description" content="Linux 命令2  clear 清屏 文件查询linux 分页查询more -c [文件名] more -c -3 [文件名]  进行分页显示 刷新之前内容  file 查看文件类型file [文件所在路径] 文件摘选head -n3 [文件名]  查看文件前三行  tail -n3 [文件名]"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://qinliil.github.io/2024/06/01/Linux%20%E5%91%BD%E4%BB%A42/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: 'https://twikoo-two-rose.vercel.app/',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 倾黎","link":"链接: ","source":"来源: 倾黎","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '倾黎',
+  title: 'linux',
+  postAI: '',
+  pageFillDescription: 'Linux 命令2, 文件查询, linux 分页查询, file 查看文件类型, 文件摘选, find查找指定目录下文件, 文件压缩与打包, gzip 用来解压与压缩文件, tar  可打包多个文件打包到一个文件内, unzip 解压zip文件, 文件命令·连接文件, vim 基础操作, 提取列或字段, rpm 软件安装与管理, rpm软件查询, dnf软件安装与管理, dnf配置文件, dnf 软件包的升级, dnf软件原的启用与禁止, 磁盘管理, 挂载磁盘fastab, dump, 分区工具使用, fdisk 分区工具使用流程, fdisk修改分区类型, gpt 分区, 交互式硬盘分区, 非交互式, 查看硬盘格式, 格式化硬盘, 挂载硬盘, 取消挂载, 逻辑卷的管理, 管理逻辑卷-创建物理卷, 创建LVM卷组(VG), VG扩容, 创建LVM 的逻辑卷, 逻辑卷容量的变更, 逻辑卷扩容, 逻辑卷缩容, 计划任务管理, 周期性任务, 网络管理, 重启网卡服务：systemctl restart NetworkManager, 查看网络性能, 使用ss命令查看套接词统计信息加上参数可过滤不同类型的套接字, 查看网络信息, nmcli 创建连接, 将连接状态启用x2F关闭, 修改nmcli属性, 路由, 临时添加路由, 删除路由, 主机名设置, 进程管理, 调整进程优先级, nice 使用语法, renice 使用语法, x20前后台进程, 查看进程, 查看进程 - ps、top, top查看进程, 进程管理, 用户连接命令清屏文件查询分页查询文件名文件名进行分页显示刷新之前内容查看文件类型文件所在路径文件摘选文件名查看文件前三行文件名查看文件后三行查找指定目录下文件使用语法文件路径需查找文件名按照文件名查找文件按照文件权限来查找文件按照文件属主来查找文件按照文件的更改时间来查找文件查找命令是否存在以及执行的到底是哪一个位置的命令文件压缩与打包用来解压与压缩文件使用语法可选参数文件或目录解开压缩文件强行压缩文件列出压缩文件的相关信息递归处理将目标目录下的所有文件及之目录一并处理显示命令执行过程缺点无法压缩目录可打包多个文件打包到一个文件内使用语法可选命令压缩包名文件名建立新的压缩文件从压缩的文件中提取文件显示压缩文件内容选择解压文件选择解压文件显示过程备份一次文件解压文件使用语法参数压缩包名指定解压路径解压不覆盖已有文件查看详细测试压缩文件是否有损坏指定文件解压文件但不解压指定文件文件命令连接文件命令用于创建链接文件默认情况下创建硬链接使用语法源文件目标文件删除覆盖以前建立的链接允许超级用户制作目录的硬链接强制执行交互模式文件存在则提示用户是否覆盖把符号链接视为一般目录软连接符号链接必须绝对路径连接文件软连接硬链接以路径形式存在以文件副本形式存在但不占用实践空间删除文件后链接失效删除源文件无影响可对目录进行连接不可以对目录进行连接可以跨文件系统不可以跨文件系统基础操作到文件头部到文件尾部显示文件行数可复制一个词指两个空格间的文本在光标之后查找一个字符串按重复操作反向查找在光标之前查找一个字符串在光标之前替换第一个在光标之后替换第一个将文件行的替换为不加则只能替换每行的第一个将文件所有的替换为不区分大小写提取列或字段使用语法参数文件显示行中指定直接范围的内容范围仅显示行中指定范围的字符指定字段的分隔符默认的字段分隔符为范围显示指定第个字段的内容可以用逗号隔开显示多个字段软件安装与管理使用语法参数安装包指定安装的软件包所有显示详细的安装过程及进度显示安装的详细过程升级指定的软件包卸载重装升级指定的软件包在原有的基础上安装查看系统已安装的所有软件包查询已安装的软件包的版本信息查询效验一个软件包的文件卸载软件包强制卸载软件可能会导致其他软件无法正常使用软件查询使用语法参数文件包查询软件包是否安装查询所有安装的软件包查询所有已安装过的软件包查询未安装的软件包查询已安装的软件包的文件列表和完整的目录查询软件包的详细信息查询已安装软件包中的配置文件查询已安装软件包中的帮助文档软件安装与管理所有语法参数文件包缓存目录升级安装包时默认安装最新版本如无法安装则提示原因查看包的详细信息软件包名查看软件包下载软件包安装软件包卸载软件包配置文件主要配置文件在描述软件仓库名称软件仓库地址软件包的升级软件原的启用与禁止文件目录文件磁盘管理挂载磁盘使用语法参数目录在启动时自动使用命令挂载只读形式挂载读写模式挂载文件允许任意用户挂载改文件只能被挂载解析不解析文件系统上的特殊设备不更新文件系统目录上访问记录可以提升性能使用文件系统默认挂载参数表示忽略则经行备份大部分用户没有安装对他们而言应该设置为根目录应当获取得最高得优先权其他所有需要被检查得设备为表示设备不会被检查查看系统所有磁盘信息查看系统挂载磁盘空间大小和利用率分区工具使用使用语法参数设备指定分区大小列出指定得外围设备得分区表分区编号将指定得分区输出到标准输出上搭配参数列表会用分区数目取代柱面数目来表示每个分区的起始地址显示版本信息分区工具使用流程新建一个分区选择主分区输入建立分区号回车建立默认起始柱面大小定义分区大小打印分区信息保存修改分区类型进入改硬盘硬盘位置需要修改分区的查看类型有哪些分区选择硬盘硬盘所在位置删除分区硬盘所在位置硬盘交互式硬盘分区创建分区表以上只能使用其他新建分区不带指令会一步步提示用户输入相关信息完成后保存退出非交互式硬盘位置硬盘格式硬盘格式变成对应格式硬盘位置分区名起始终止分区硬盘位置格式化查看硬盘格式格式化硬盘使用语法格式化类型硬盘分区挂载硬盘临时挂载硬盘所在位置挂载位置永久挂载文件最后一行添加信息硬盘位置挂载位置文件格式参数参数一般为参数一般为取消挂载硬盘所在位置逻辑卷的管理管理逻辑卷创建物理卷创建需要硬盘类型为使用语法参数设备路径设备强制创建物理卷指设备的所有的问题都回答显示当前物理卷的信息创建卷组使用语法参数卷组名物理卷列表卷组上允许创建的最大逻辑卷数卷组中允许添加的最大物理卷数卷组上的物理的大小卷组名显示改卷组的信息扩容名称名称创建的逻辑卷使用语法参数逻辑卷名称指定逻辑卷的大小单位为字节指定逻辑卷的大小数查看卷组信息逻辑卷创建完成后需要格式化与挂载才能使用逻辑卷容量的变更使用语法参数逻辑卷名称指定逻辑卷的大小单位为字节指定逻辑卷的大小数逻辑卷扩容流程查看是否有足够的空间扩容名称名称使用命令扩容内容大小的名称更新文件系统的大小名称逻辑卷缩容流程先确定缩小后的大小并确保对应目标逻辑卷有足够的空间可容纳原有数据卸载文件系统缩减文件系统文件系统位置文件大小设置文件为不活动的文件位置缩减逻辑卷设置文件为活动的文件位置检查文件系统文件所在位置重新挂载使用计划任务管理绝对计时小时分钟深夜中午饮茶时间一般为下午点采用小时制在时间后面会加上或者来表明上午还是下午指定命令执行具体日期月日月日年日月年指定日期必须根在指定时间后面相对计时时间数量如几天几分钟等等时间分钟小时天星期使用语法队列文件名时间查看作业详细作业删除作业作业周期性任务使用语法参数设置某个用户的服务列出某个用户服务的详细内容删除某个用户的编辑某个用户的服务文件文件需要输个参数参数描述分钟小时一个月的第几天一年的第几月一周的星期几周日执行命令表示所有表示每如表示为每两个单位从某个数字到某个数字散离数字网络管理网卡配置重启网卡服务当前设备状态信息设备的地址信息地址子网掩码广播地址作用域设备名称信息信息查看网络性能表示接受的数据包信息表示传送的数据包信息显示套接字信息使用命令查看套接词统计信息加上参数可过滤不同类型的套接字帮助显示版本号显示协议的显示协议的显示与选项相同不解析服务的名称如端口不会显示成只显示处于监听状态的端口显示监听端口的进程上需要对协议来说既包含监听的端口也包含建立的连接把解释为域名把端口号解释为协议名称本地地址与端口对端地址与端口查看网络信息创建连接连接名称类型设备名称设备名称将连接状态启用关闭连接名修改属性连接名键值对路由临时添加路由新增路由目的网段子网掩码出口设备去指定地址目的出口设备删除路由子网掩码出口设备主机名设置临时主机名主机名永久主机名主机名通过修改文件设置主机名在文件中写入主机名进程管理用户进程父进程程序优先级越小越优先表示进程可被执行的优先级的修正数值优先级范围实时进程非实时进程调整进程优先级使用语法优先序取值范围把的运行优先级设置为使用语法优先序与相同作用对象有程序群组进程用户把运行的优先级设置为前后台进程常用进程管理命令将放在命令的最后可以把这个命令放到后台执行当前台在执行一个命令的时候使用会把它放到后台并暂停中断当前在执行的命令查看当前有多少正在后台运行的命令将后台的命令调到前台继续运行将后台任务唤醒并在后台运行查看进程查看进程命令可以显示当前进程并列出详细的进程信息字段含义如下表常用或查看进程信息命令用于显示特定时间点的进程信息命令可以实时显示进程信息字段描述用户识别符唯一进程识别符进程的占用率进程的内存占用率进程谦让度值进程优先级与进程关联的终端进程的状态查看进程常用参数指定特定的进程号进行观察列名含义进程程所有者的用户名优先级负值表示高优先级正值表示低优先级进程使用的虚拟内存总量单位进程使用的未被换出的物理内存大小单位共享内存大小单位进程状态不可中断的睡眠状态运行睡眠跟踪停止僵尸进程上次更新到现在的时间占用百分比进程使用的物理内存百分比进程使用的时间总计单位秒命令名命令行进程管理命令通过管理进程号命令通过进程名管理进程支持通配符用户连接使用命令查看连接主机用户使用命令查看当前登录用户使用使用',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-29 15:04:46',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/img/723.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">倾黎</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/linux/" style="font-size: 1.05rem;">linux<sup>1</sup></a><a href="/tags/parime/" style="font-size: 1.05rem;">parime<sup>2</sup></a><a href="/tags/php/" style="font-size: 1.05rem;">php<sup>1</sup></a><a href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" style="font-size: 1.05rem;">应急响应<sup>1</sup></a><a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" style="font-size: 1.05rem;">渗透测试<sup>6</sup></a><a href="/tags/%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%89%93%E9%9D%B6/" style="font-size: 1.05rem;">跟我一起打靶<sup>4</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">June 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">July 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/linux/" itemprop="url">linux</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/linux/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>linux</span></a></span></div></div><h1 class="post-title" itemprop="name headline">linux</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-06-01T09:35:43.434Z" title="发表于 2024-06-01 17:35:43">2024-06-01</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2023-07-29T07:04:46.894Z" title="更新于 2023-07-29 15:04:46">2023-07-29</time></span></div><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/preview.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://qinliil.github.io/2024/06/01/Linux%20%E5%91%BD%E4%BB%A42/"><header><a class="post-meta-categories" href="/categories/linux/" itemprop="url">linux</a><a href="/tags/linux/" tabindex="-1" itemprop="url">linux</a><h1 id="CrawlerTitle" itemprop="name headline">linux</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">倾黎</span><time itemprop="dateCreated datePublished" datetime="2024-06-01T09:35:43.434Z" title="发表于 2024-06-01 17:35:43">2024-06-01</time><time itemprop="dateCreated datePublished" datetime="2023-07-29T07:04:46.894Z" title="更新于 2023-07-29 15:04:46">2023-07-29</time></header><h1 id="Linux-命令2"><a href="#Linux-命令2" class="headerlink" title="Linux 命令2"></a>Linux 命令2</h1><!-- ## 目录
+
+-   [文件查询](#文件查询)
+    -   [linux 分页查询](#linux-分页查询)
+    -   [file 查看文件类型](#file-查看文件类型)
+    -   [文件摘选](#文件摘选)
+    -   [find查找指定目录下文件](#find查找指定目录下文件)
+-   [文件压缩与打包](#文件压缩与打包)
+    -   [gzip 用来解压与压缩文件](#gzip-用来解压与压缩文件)
+    -   [tar  可打包多个文件打包到一个文件内](#tar--可打包多个文件打包到一个文件内)
+    -   [unzip 解压zip文件](#unzip-解压zip文件)
+    -   [文件命令·连接文件](#文件命令连接文件)
+-   [vim 基础操作](#vim-基础操作)
+    -   [提取列或字段](#提取列或字段)
+-   [rpm 软件安装与管理](#rpm-软件安装与管理)
+    -   [rpm软件查询](#rpm软件查询)
+    -   [dnf软件安装与管理](#dnf软件安装与管理)
+    -   [dnf配置文件](#dnf配置文件)
+    -   [dnf 软件包的升级](#dnf-软件包的升级)
+    -   [dnf软件原的启用与禁止](#dnf软件原的启用与禁止)
+-   [磁盘管理](#磁盘管理)
+    -   [挂载磁盘fastab](#挂载磁盘fastab)
+    -   [dump](#dump)
+    -   [分区工具使用](#分区工具使用)
+    -   [fdisk 分区工具使用流程](#fdisk-分区工具使用流程)
+    -   [fdisk修改分区类型](#fdisk修改分区类型)
+    -   [gpt 分区](#gpt-分区)
+    -   [交互式硬盘分区](#交互式硬盘分区)
+    -   [非交互式](#非交互式)
+    -   [查看硬盘格式](#查看硬盘格式)
+    -   [格式化硬盘](#格式化硬盘)
+    -   [挂载硬盘](#挂载硬盘)
+    -   [取消挂载](#取消挂载)
+    -   [逻辑卷的管理](#逻辑卷的管理)
+    -   [管理逻辑卷-创建物理卷](#管理逻辑卷-创建物理卷)
+    -   [创建LVM卷组(VG)](#创建LVM卷组VG)
+    -   [VG扩容](#VG扩容)
+    -   [创建LVM 的逻辑卷](#创建LVM-的逻辑卷)
+    -   [逻辑卷容量的变更](#逻辑卷容量的变更)
+    -   [逻辑卷扩容](#逻辑卷扩容)
+    -   [逻辑卷缩容](#逻辑卷缩容)
+-   [计划任务管理](#计划任务管理)
+    -   [周期性任务](#周期性任务)
+-   [网络管理](#网络管理)
+    -   [重启网卡服务：systemctl reboad NetworkManager](#重启网卡服务systemctl-reboad-NetworkManager)
+    -   [查看网络性能](#查看网络性能)
+    -   [使用ss命令查看套接词统计信息，加上参数可过滤不同类型的套接字](#使用ss命令查看套接词统计信息加上参数可过滤不同类型的套接字)
+    -   [查看网络信息](#查看网络信息)
+    -   [nmcli 创建连接](#nmcli-创建连接)
+    -   [将连接状态启用/关闭](#将连接状态启用关闭)
+    -   [修改nmcli属性](#修改nmcli属性)
+    -   [路由](#路由)
+    -   [临时添加路由](#临时添加路由)
+    -   [删除路由](#删除路由)
+    -   [主机名设置](#主机名设置)
+    -   [进程管理](#进程管理)
+    -   [调整进程优先级](#调整进程优先级)
+        -   [nice 使用语法](#nice-使用语法)
+        -   [renice 使用语法](#renice-使用语法)
+-   [ 前后台进程](#-前后台进程)
+    -   [查看进程](#查看进程)
+        -   [查看进程 - ps、top](#查看进程---pstop)
+        -   [top查看进程](#top查看进程)
+        -   [进程管理](#进程管理)
+-   [用户连接](#用户连接)
+-->
+
+<p>clear</p>
+<p>清屏</p>
+<h3 id="文件查询"><a href="#文件查询" class="headerlink" title="文件查询"></a>文件查询</h3><h4 id="linux-分页查询"><a href="#linux-分页查询" class="headerlink" title="linux 分页查询"></a>linux 分页查询</h4><p>more -c [文件名]</p>
+<p>more -c -3 [文件名]</p>
+<ul>
+<li>进行分页显示 刷新之前内容</li>
+</ul>
+<h4 id="file-查看文件类型"><a href="#file-查看文件类型" class="headerlink" title="file 查看文件类型"></a>file 查看文件类型</h4><p>file [文件所在路径]</p>
+<h4 id="文件摘选"><a href="#文件摘选" class="headerlink" title="文件摘选"></a><strong>文件摘选</strong></h4><p><strong>head -n3 [文件名]</strong></p>
+<ul>
+<li>查看文件前三行</li>
+</ul>
+<p><strong>tail -n3 [文件名]</strong></p>
+<ul>
+<li>查看文件后三行</li>
+</ul>
+<h4 id="find查找指定目录下文件"><a href="#find查找指定目录下文件" class="headerlink" title="find查找指定目录下文件"></a><strong>find查找指定目录下文件</strong></h4><p>使用语法：find [文件路径] [需查找文件名].</p>
+<ul>
+<li>-name 按照文件名查找文件</li>
+<li>-perm 按照文件权限来查找文件</li>
+<li>-user 按照文件属主来查找文件</li>
+<li>-mtine -n +n 按照文件的更改时间来查找文件</li>
+</ul>
+<p><strong>which</strong></p>
+<p>查找命令是否存在，以及执行的到底是哪一个位置的命令</p>
+<h2 id="文件压缩与打包"><a href="#文件压缩与打包" class="headerlink" title="文件压缩与打包"></a>文件压缩与打包</h2><h4 id="gzip-用来解压与压缩文件"><a href="#gzip-用来解压与压缩文件" class="headerlink" title="gzip 用来解压与压缩文件"></a><strong>gzip 用来解压与压缩文件</strong></h4><p>使用语法：gzip [可选参数] [文件或目录]</p>
+<ul>
+<li>-d 解开压缩文件</li>
+<li>-f 强行压缩文件</li>
+<li>-l 列出压缩文件的相关信息</li>
+<li>-r 递归处理，将目标目录下的所有文件及之目录一并处理</li>
+<li>-v 显示命令执行过程<ul>
+<li>缺点无法压缩目录</li>
+</ul>
+</li>
+</ul>
+<h4 id="tar-可打包多个文件打包到一个文件内"><a href="#tar-可打包多个文件打包到一个文件内" class="headerlink" title="tar  可打包多个文件打包到一个文件内"></a><strong>tar  可打包多个文件打包到一个文件内</strong></h4><p>使用语法：tar [可选命令] [压缩包名] [文件名]</p>
+<ul>
+<li>-c 建立新的压缩文件</li>
+<li>-x 从压缩的文件中提取文件</li>
+<li>-t 显示压缩文件内容</li>
+<li>-z 选择gzip解压文件</li>
+<li>-j 选择bzip2解压文件</li>
+<li>-v 显示过程</li>
+<li>f 备份一次文件</li>
+</ul>
+<h4 id="unzip-解压zip文件"><a href="#unzip-解压zip文件" class="headerlink" title="unzip 解压zip文件"></a>unzip 解压zip文件</h4><p>使用语法：unzip [参数] 压缩包名</p>
+<ul>
+<li>-d 指定解压路径</li>
+<li>-o 解压不覆盖已有文件</li>
+<li>-v 查看详细</li>
+<li>-t 测试压缩文件是否有损坏</li>
+<li>-x  指定文件 解压文件但不解压指定文件</li>
+</ul>
+<h4 id="文件命令·连接文件"><a href="#文件命令·连接文件" class="headerlink" title="文件命令·连接文件"></a>文件命令·连接文件</h4><p><strong>ln 命令用于创建链接文件，默认情况下创建硬链接</strong></p>
+<p>使用语法： ln [-f |-n] [-s]  源文件 目标文件</p>
+<ul>
+<li>-b 删除，覆盖以前建立的链接</li>
+<li>-d 允许超级用户制作目录的硬链接</li>
+<li>-f 强制执行</li>
+<li>-l 交互模式，文件存在则提示用户是否覆盖</li>
+<li>-n 把符号链接视为一般目录</li>
+<li>-s 软连接（符号链接）必须绝对路径</li>
+</ul>
+<p>连接文件</p>
+<table>
+<thead>
+<tr>
+<th>软连接</th>
+<th>硬链接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>以路径形式存在</td>
+<td>以文件副本形式存在，但不占用实践空间</td>
+</tr>
+<tr>
+<td>删除文件后链接失效</td>
+<td>删除源文件无影响</td>
+</tr>
+<tr>
+<td>可对目录进行连接</td>
+<td>不可以对目录进行连接</td>
+</tr>
+<tr>
+<td>可以跨文件系统</td>
+<td>不可以跨文件系统</td>
+</tr>
+</tbody></table>
+<h2 id="vim-基础操作"><a href="#vim-基础操作" class="headerlink" title="vim 基础操作"></a>vim 基础操作</h2><ul>
+<li>gg 到文件头部</li>
+<li>G 到文件尾部</li>
+<li>set nu 显示文件行数</li>
+<li>y[1]w 可复制一个词（指两个空格间的文本）</li>
+<li>:&#x2F;word 在光标之后查找一个字符串word ,按n重复操作，shift + n 反向查找</li>
+<li>:?word 在光标之前查找一个字符串word</li>
+<li>:s&#x2F;word1&#x2F;word2&#x2F; 在光标之前替换第一个word1</li>
+<li>:s?word1?word2 在光标之后替换第一个word1</li>
+<li>:1,5s&#x2F;word1&#x2F;word2&#x2F;g 将文件1-5行的word1替换为word2，不加g则只能替换每行的第一个</li>
+<li>%s&#x2F;word1&#x2F;word2&#x2F;gi 将文件所有的word1替换为word2，不区分大小写</li>
+</ul>
+<h4 id="提取列或字段"><a href="#提取列或字段" class="headerlink" title="提取列或字段"></a><strong>提取列或字段</strong></h4><p>使用语法：cut [参数] [文件]</p>
+<ul>
+<li>-b 显示行中指定直接范围的内容</li>
+<li>-c [范围] ：仅显示行中指定范围的字符</li>
+<li>-d：指定字段的分隔符，默认的字段分隔符为”TAB”</li>
+<li>-f [范围]：显示指定第num个字段的内容，可以用逗号隔开显示多个字段</li>
+</ul>
+<h2 id="rpm-软件安装与管理"><a href="#rpm-软件安装与管理" class="headerlink" title="rpm 软件安装与管理"></a><strong>rpm 软件安装与管理</strong></h2><p>使用语法：rpm[参数] [安装包]</p>
+<ul>
+<li>-i 指定安装的软件包</li>
+<li>-h 所有“#”显示rpm详细的安装过程及进度</li>
+<li>-v 显示安装的详细过程</li>
+<li>-u 升级指定的软件包（卸载重装）</li>
+<li>-f 升级指定的软件包（在原有的基础上安装）</li>
+<li>-a 查看系统已安装的所有软件包</li>
+<li>-V 查询已安装的软件包的版本信息</li>
+<li>-p 查询&#x2F;效验一个软件包的文件</li>
+<li>-e 卸载软件包(nodeps)强制卸载软件可能会导致其他软件无法正常使用</li>
+</ul>
+<h4 id="rpm软件查询"><a href="#rpm软件查询" class="headerlink" title="rpm软件查询"></a>rpm软件查询</h4><p>使用语法：rpm [参数] [文件包]</p>
+<ul>
+<li>-q 查询软件包是否安装</li>
+<li>-qa 查询所有安装的软件包</li>
+<li>-qf 查询所有已安装过的软件包</li>
+<li>-qp 查询未安装的软件包</li>
+<li>-ql 查询已安装的软件包的文件列表和完整的目录</li>
+<li>-qi 查询软件包的详细信息</li>
+<li>-qc 查询已安装软件包中的配置文件</li>
+<li>-qd 查询已安装软件包中的帮助文档</li>
+</ul>
+<h4 id="dnf软件安装与管理"><a href="#dnf软件安装与管理" class="headerlink" title="dnf软件安装与管理"></a>dnf软件安装与管理</h4><p>所有语法：dnf [参数] [文件包]</p>
+<ul>
+<li>cachedir 缓存目录</li>
+<li>best 升级安装包时默认安装最新版本，如无法安装则提示原因</li>
+<li>info 查看rpm包的详细信息</li>
+<li>list all&#x2F;[软件包名] 查看软件包</li>
+<li>downloab 下载软件包</li>
+<li>install 安装软件包</li>
+<li>remobe 卸载软件包</li>
+</ul>
+<h4 id="dnf配置文件"><a href="#dnf配置文件" class="headerlink" title="dnf配置文件"></a>dnf配置文件</h4><p>dnf主要配置文件在&#x2F;etc&#x2F;dnf&#x2F;dnf.conf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[repository]</span><br><span class="line">name=repository_name</span><br><span class="line">baseurl=repository_url</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=0</span><br></pre></td></tr></table></figure>
+
+<p>[描述]</p>
+<p>name&#x3D;[软件仓库名称]</p>
+<p>baseurl&#x3D;[软件仓库地址]</p>
+<p>enabled&#x3D;1</p>
+<p>gpgcheck&#x3D;0</p>
+<h4 id="dnf-软件包的升级"><a href="#dnf-软件包的升级" class="headerlink" title="dnf 软件包的升级"></a>dnf 软件包的升级</h4><p>dnf check-update</p>
+<p>dnf update package_name &#x2F;dnf group update group_name</p>
+<h4 id="dnf软件原的启用与禁止"><a href="#dnf软件原的启用与禁止" class="headerlink" title="dnf软件原的启用与禁止"></a>dnf软件原的启用与禁止</h4><p>dnf config-manager –add-repo file:&#x2F;&#x2F;&#x2F;[media&#x2F;qhg &#x2F;文件目录]</p>
+<p>dnf config-manager –set-disable [media_qhg&#x2F;文件id]</p>
+<h2 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h2><h4 id="挂载磁盘fastab"><a href="#挂载磁盘fastab" class="headerlink" title="挂载磁盘fastab"></a>挂载磁盘fastab</h4><p><strong>使用语法：fstad [参数] [目录]</strong></p>
+<ul>
+<li>auto 在启动时自动使用mount -a 命令挂载</li>
+<li>ro 只读形式挂载</li>
+<li>rw 读写模式挂载文件</li>
+<li>user 允许任意用户挂载改文件</li>
+<li>nouser 只能被root 挂载</li>
+<li>dev&#x2F;nodev 解析&#x2F;不解析文件系统上的特殊设备</li>
+<li>noatime&#x2F;nodiratime 不更新文件系统&#x2F;目录上inode 访问记录，可以提升性能</li>
+<li>defaults 使用文件系统默认挂载参数</li>
+</ul>
+<h4 id="dump"><a href="#dump" class="headerlink" title="dump"></a>dump</h4><ul>
+<li>dump 0&#x2F;1 0表示忽略，1则经行备份。大部分用户没有安装dnmp，对他们而言应该设置为0</li>
+<li>pass 1,2,3 根目录应当获取得最高得优先权 1，其他所有需要被检查得设备为2，0表示设备不会被fsck检查</li>
+</ul>
+<p><strong>查看系统所有磁盘信息</strong></p>
+<p>fdisk -l</p>
+<p><strong>查看系统挂载、磁盘空间大小和利用率</strong></p>
+<p>df -h</p>
+<h4 id="分区工具使用"><a href="#分区工具使用" class="headerlink" title="分区工具使用"></a><strong>分区工具使用</strong></h4><p>使用语法：fdisk [参数] [设备]</p>
+<ul>
+<li>-b 指定分区大小</li>
+<li>-l 列出指定得外围设备得分区表</li>
+<li>-s   分区编号 将指定得分区输出到标准输出上</li>
+<li>-u 搭配-l参数列表，会用分区数目取代柱面数目，来表示每个分区的起始地址</li>
+<li>-v 显示版本信息</li>
+</ul>
+<h4 id="fdisk-分区工具使用流程"><a href="#fdisk-分区工具使用流程" class="headerlink" title="fdisk 分区工具使用流程"></a>fdisk 分区工具使用流程</h4><p>n:新建一个分区&gt;p：选择主分区&gt;输入1-4建立分区号&gt;回车建立默认起始柱面&gt; +大小 ：定义分区大小&gt; p：打印分区信息&gt;w：保存</p>
+<h4 id="fdisk修改分区类型"><a href="#fdisk修改分区类型" class="headerlink" title="fdisk修改分区类型"></a>fdisk修改分区类型</h4><p>进入改硬盘 fdisk [硬盘位置] &gt; t &gt; 需要修改分区的id &gt; L 查看类型有哪些</p>
+<h4 id="gpt-分区"><a href="#gpt-分区" class="headerlink" title="gpt 分区"></a>gpt 分区</h4><p>选择硬盘：parted 硬盘所在位置</p>
+<p>删除分区：parted 硬盘所在位置 rm 硬盘ID</p>
+<h4 id="交互式硬盘分区"><a href="#交互式硬盘分区" class="headerlink" title="交互式硬盘分区"></a>交互式硬盘分区</h4><ul>
+<li>mklable gpt 创建gpt分区表，2t以上只能使用gpt,其他</li>
+<li>mkpart 新建分区，不带指令parted会一步步提示用户输入相关信息</li>
+<li>q 完成后保存退出</li>
+</ul>
+<h4 id="非交互式"><a href="#非交互式" class="headerlink" title="非交互式"></a>非交互式</h4><ul>
+<li>parted [硬盘位置] [硬盘格式] :硬盘格式变成对应格式</li>
+<li>parted [硬盘位置] mkpart [分区名] [起始-终止] :分区</li>
+<li>mkfs -t ext4 [硬盘位置] :格式化</li>
+</ul>
+<h4 id="查看硬盘格式"><a href="#查看硬盘格式" class="headerlink" title="查看硬盘格式"></a>查看硬盘格式</h4><p>parted -l</p>
+<h4 id="格式化硬盘"><a href="#格式化硬盘" class="headerlink" title="格式化硬盘"></a>格式化硬盘</h4><p>使用语法 mkfs.[格式化类型] [硬盘分区ID]</p>
+<h4 id="挂载硬盘"><a href="#挂载硬盘" class="headerlink" title="挂载硬盘"></a>挂载硬盘</h4><p>临时挂载：mount [硬盘所在位置] [挂载位置]</p>
+<p>永久挂载：vim &#x2F;etc&#x2F;fstab</p>
+<p>文件最后一行添加信息 ：</p>
+<p>[硬盘位置]   [挂载位置]  [文件格式] [defaults参数] [dump参数 一般为0] [fsck参数 一般为0]</p>
+<h4 id="取消挂载"><a href="#取消挂载" class="headerlink" title="取消挂载"></a>取消挂载</h4><p>umount [硬盘所在位置]</p>
+<h4 id="逻辑卷的管理"><a href="#逻辑卷的管理" class="headerlink" title="逻辑卷的管理"></a>逻辑卷的管理</h4><h4 id="管理逻辑卷-创建物理卷"><a href="#管理逻辑卷-创建物理卷" class="headerlink" title="管理逻辑卷-创建物理卷"></a>管理逻辑卷-创建物理卷</h4><p><strong>创建pv需要硬盘类型为8e</strong></p>
+<p><strong>使用语法：pvcreate [参数] [设备路径]{设备id}</strong></p>
+<ul>
+<li>-f 强制创建物理卷</li>
+<li>-u 指设备的uuid</li>
+<li>-y 所有的问题都回答yes<ul>
+<li>pvs 显示当前物理卷的信息</li>
+</ul>
+</li>
+</ul>
+<h4 id="创建LVM卷组-VG"><a href="#创建LVM卷组-VG" class="headerlink" title="创建LVM卷组(VG)"></a>创建LVM卷组(VG)</h4><p><strong>使用语法：vgcreate [参数] [卷组名] [物理卷列表]</strong></p>
+<ul>
+<li>-l 卷组上允许创建的最大逻辑卷数</li>
+<li>-p 卷组中允许添加的最大物理卷数</li>
+<li>-s 卷组上的物理的pe 大小<ul>
+<li>vgdisplay [卷组名] 显示改卷组的信息</li>
+</ul>
+</li>
+</ul>
+<h4 id="VG扩容"><a href="#VG扩容" class="headerlink" title="VG扩容"></a>VG扩容</h4><p>vgextend [vg名称] [pv名称]</p>
+<h4 id="创建LVM-的逻辑卷"><a href="#创建LVM-的逻辑卷" class="headerlink" title="创建LVM 的逻辑卷"></a>创建LVM 的逻辑卷</h4><p><strong>使用语法：lvcreate [参数] [逻辑卷名称]</strong></p>
+<ul>
+<li>-L 指定逻辑卷的大小，单位为（M G T）字节</li>
+<li>-l 指定逻辑卷的大小（LE数）<ul>
+<li>lvscan 查看卷组信息</li>
+<li>逻辑卷创建完成后需要格式化与挂载才能使用</li>
+</ul>
+</li>
+</ul>
+<h4 id="逻辑卷容量的变更"><a href="#逻辑卷容量的变更" class="headerlink" title="逻辑卷容量的变更"></a>逻辑卷容量的变更</h4><p><strong>使用语法：lvresize [参数] 逻辑卷名称</strong></p>
+<ul>
+<li>-L 指定逻辑卷的大小，单位为（M G T）字节</li>
+<li>-l 指定逻辑卷的大小（LE数）</li>
+</ul>
+<h4 id="逻辑卷扩容"><a href="#逻辑卷扩容" class="headerlink" title="逻辑卷扩容"></a>逻辑卷扩容</h4><p><strong>流程:</strong></p>
+<ol>
+<li>查看是否有足够的vg空间：vgs</li>
+<li>VG扩容vgextend [vg名称] [pv名称]</li>
+<li>使用命令扩容：lvextend -L +[内容大小] [lv的名称]</li>
+<li>更新文件系统的大小：resize2fs [lv名称]</li>
+</ol>
+<h4 id="逻辑卷缩容"><a href="#逻辑卷缩容" class="headerlink" title="逻辑卷缩容"></a>逻辑卷缩容</h4><p><strong>流程：</strong></p>
+<ol>
+<li>先确定缩小后的大小，并确保对应目标逻辑卷有足够的空间可容纳原有数据</li>
+<li>卸载文件系统：umount</li>
+<li>缩减文件系统：resize2fs [文件系统位置] [文件大小]</li>
+<li>设置lv文件为不活动的：lvchange -a n [lv文件位置]</li>
+<li>缩减逻辑卷：lvreduce</li>
+<li>设置lv文件为活动的：lvchange -a y [lv文件位置]</li>
+<li>检查文件系统：e2fsck -f [文件所在位置]</li>
+<li>重新挂载使用</li>
+</ol>
+<h2 id="计划任务管理"><a href="#计划任务管理" class="headerlink" title="计划任务管理"></a>计划任务管理</h2><p><strong>at 绝对计时</strong></p>
+<ul>
+<li>hh.mm(小时，分钟)</li>
+<li>midnight(深夜)</li>
+<li>noon(中午)</li>
+<li>teatime(饮茶时间，一般为下午4点)</li>
+<li>采用12小时制，在时间后面会加上AM 或者PM 来表明上午还是下午</li>
+<li>指定命令执行具体日期，month day(月日)mm&#x2F;dd&#x2F;yy(月&#x2F;日&#x2F;年)dd.mm.yy(日.月.年) 指定日期必须根在指定时间后面</li>
+</ul>
+<p><strong>相对计时 ：at 16:30 6&#x2F;7&#x2F;20</strong></p>
+<ul>
+<li>now+时间数量（如几天、几分钟等等） 时间 （min 分钟&#x2F;hours 小时&#x2F; days 天&#x2F; weeks 星期）</li>
+</ul>
+<p>使用语法：at [-V] [-q 队列] [-f 文件名] [-mldbv] 时间</p>
+<p><strong>查看作业详细</strong></p>
+<p>at -c [作业id]</p>
+<p><strong>删除作业</strong></p>
+<p>atrm 作业id</p>
+<h4 id="周期性任务"><a href="#周期性任务" class="headerlink" title="周期性任务"></a>周期性任务</h4><p>使用语法:crontab [参数]</p>
+<ul>
+<li>-u 设置某个用户的cron服务</li>
+<li>-l 列出某个用户cron服务的详细内容</li>
+<li>-r  删除某个用户的cron</li>
+<li>-e 编辑某个用户的cron服务</li>
+</ul>
+<p>crontab 文件</p>
+<p>crontab 文件需要输6个参数</p>
+<p>minute hour day-of-month month-of-year day-of-week commands</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>minute</td>
+<td>分钟（0-59）</td>
+</tr>
+<tr>
+<td>hour</td>
+<td>小时（0-23）</td>
+</tr>
+<tr>
+<td>day-of-month</td>
+<td>一个月的第几天（0-31）</td>
+</tr>
+<tr>
+<td>month-of-year</td>
+<td>一年的第几月（1-12）</td>
+</tr>
+<tr>
+<td>day-of-week</td>
+<td>一周的星期几（0-6）0周日</td>
+</tr>
+<tr>
+<td>commands</td>
+<td>执行命令</td>
+</tr>
+<tr>
+<td>*</td>
+<td>表示所有</td>
+</tr>
+<tr>
+<td>&#x2F;</td>
+<td>表示每如：&#x2F;2表示为每两个单位</td>
+</tr>
+<tr>
+<td>-</td>
+<td>从某个数字到某个数字</td>
+</tr>
+<tr>
+<td>，</td>
+<td>散离数字</td>
+</tr>
+</tbody></table>
+<h2 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h2><p>网卡配置</p>
+<h4 id="重启网卡服务：systemctl-restart-NetworkManager"><a href="#重启网卡服务：systemctl-restart-NetworkManager" class="headerlink" title="重启网卡服务：systemctl restart NetworkManager"></a>重启网卡服务：systemctl restart NetworkManager</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/linux_2/image_SvLyhb1DaV.png"></p>
+<ul>
+<li>当前设备状态：UP</li>
+<li>link信息：设备的MAC地址</li>
+<li>inet信息：IPV4地址子网掩码</li>
+<li>广播地址、作用域、设备名称</li>
+<li>inet6信息：IPV6信息</li>
+</ul>
+<h4 id="查看网络性能"><a href="#查看网络性能" class="headerlink" title="查看网络性能"></a><strong>查看网络性能</strong></h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/linux_2/image_eaYwLBOMbp.png"></p>
+<ul>
+<li>PX 表示接受的数据包信息</li>
+<li>TX 表示传送的数据包信息</li>
+</ul>
+<p>显示套接字信息</p>
+<h4 id="使用ss命令查看套接词统计信息，加上参数可过滤不同类型的套接字"><a href="#使用ss命令查看套接词统计信息，加上参数可过滤不同类型的套接字" class="headerlink" title="使用ss命令查看套接词统计信息，加上参数可过滤不同类型的套接字"></a>使用ss命令查看套接词统计信息，加上参数可过滤不同类型的套接字</h4><ul>
+<li>h, –help 帮助</li>
+<li>-V, –version 显示版本号</li>
+<li>-t, –tcp 显示 TCP 协议的 sockets</li>
+<li>-u, –udp 显示 UDP 协议的 sockets</li>
+<li>-x, –unix 显示 unix domain sockets，与 -f 选项相同</li>
+<li>-n, –numeric 不解析服务的名称，如 “22” 端口不会显示成 “ssh”</li>
+<li>-l, –listening 只显示处于监听状态的端口</li>
+<li>-p, –processes 显示监听端口的进程(Ubuntu 上需要 sudo)</li>
+<li>-a, –all 对 TCP 协议来说，既包含监听的端口，也包含建立的连接</li>
+<li>-r, –resolve 把 IP 解释为域名，把端口号解释为协议名称</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/linux_2/image_1JseUdkKXz.png"></p>
+<p>本地地址与端口          对端地址与端口</p>
+<h4 id="查看网络信息"><a href="#查看网络信息" class="headerlink" title="查看网络信息"></a><strong>查看网络信息</strong></h4><p>nmcli connection[con] show –active&#x2F;nmcli conn show</p>
+<h4 id="nmcli-创建连接"><a href="#nmcli-创建连接" class="headerlink" title="nmcli 创建连接"></a>nmcli 创建连接</h4><p>nmcli conn add con-name ‘[连接名称] type [类型&#x2F;Ethernet&#x2F;Brideg&#x2F;VxLAN] [ifname&#x2F;设备名称] [设备名称] ‘</p>
+<h4 id="将连接状态启用-关闭"><a href="#将连接状态启用-关闭" class="headerlink" title="将连接状态启用&#x2F;关闭"></a><strong>将连接状态启用&#x2F;关闭</strong></h4><p>nmcli connetion up&#x2F;down[连接名]</p>
+<h4 id="修改nmcli属性"><a href="#修改nmcli属性" class="headerlink" title="修改nmcli属性"></a>修改nmcli属性</h4><p>nmcli con modify ‘连接名’ 键值对</p>
+<h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><h4 id="临时添加路由"><a href="#临时添加路由" class="headerlink" title="临时添加路由"></a>临时添加路由</h4><ul>
+<li>新增路由 route add -net [目的网段]  netmask[子网掩码] dev[出口设备]</li>
+<li>去指定地址 route add -host [目的IP] dev[出口设备]</li>
+</ul>
+<h4 id="删除路由"><a href="#删除路由" class="headerlink" title="删除路由"></a>删除路由</h4><p>route del  [-net&#x2F;-host] netmask[子网掩码] dev[出口设备]</p>
+<h4 id="主机名设置"><a href="#主机名设置" class="headerlink" title="主机名设置"></a>主机名设置</h4><p>临时主机名：hostname [主机名]</p>
+<p>永久主机名：hostnamectl set-hostname [主机名]</p>
+<p>通过修改文件设置主机名：在&#x2F;etc&#x2F;hostname 文件中写入主机名</p>
+<h4 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h4><p>ps -l</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/linux_2/image_kn24qoHgcZ.png"></p>
+<ul>
+<li>uid: 用户id</li>
+<li>pid: 进程id</li>
+<li>ppid: 父进程id</li>
+<li>PRI 程序优先级，越小越优先</li>
+<li>NI: 表示进程可被执行的优先级的修正数值</li>
+<li>优先级PRI范围<table>
+<thead>
+<tr>
+<th>0-99</th>
+<th>实时进程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>100-139</td>
+<td>非实时进程</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="调整进程优先级"><a href="#调整进程优先级" class="headerlink" title="调整进程优先级"></a>调整进程优先级</h3><h4 id="nice-使用语法"><a href="#nice-使用语法" class="headerlink" title="nice 使用语法"></a>nice 使用语法</h4><p><strong>优先序adjustment 取值范围-19 - 20</strong></p>
+<p>nice [-n adjustent] [command [arg…]]</p>
+<ul>
+<li><p>把vi的运行优先级设置为-18</p>
+<p>nice -n -18 vi</p>
+</li>
+</ul>
+<h4 id="renice-使用语法"><a href="#renice-使用语法" class="headerlink" title="renice 使用语法"></a>renice 使用语法</h4><p><strong>优先序与nice 相同，作用对象有程序群组-g、进程-p、用户-u</strong></p>
+<p>renice [-n adjustment] [-] &lt;pid&gt;</p>
+<ul>
+<li><p>把vi 运行的优先级设置为10</p>
+<p>renice -n 10 -p 9700</p>
+</li>
+</ul>
+<h2 id="x20-前后台进程"><a href="#x20-前后台进程" class="headerlink" title="&#x20;前后台进程"></a>&#x20;前后台进程</h2><ul>
+<li><p>常用进程管理命令</p>
+<p>&amp;： 将&amp;放在命令的最后，可以把这个命令放到后台执行</p>
+<p>CTRL+z：当前台在执行一个命令的时候使用，会把它放到后台并暂停</p>
+<p>CTRL+c：中断当前在执行的命令</p>
+<p>jobs：查看当前有多少正在后台运行的命令</p>
+<p>fg：将后台的命令调到前台继续运行</p>
+<p>bg：将后台任务唤醒，并在后台运行</p>
+</li>
+</ul>
+<h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><h4 id="查看进程-ps、top"><a href="#查看进程-ps、top" class="headerlink" title="查看进程 - ps、top"></a>查看进程 - ps、top</h4><p>ps 命令可以显示当前进程，并列出详细的进程信息，字段含义如下表常用 ps aux 或 ps -ef 查看进程信息<br>ps 命令用于显示特定时间点的进程信息，top 命令可以实时显示进程信息</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>UID</td>
+<td>用户识别符</td>
+</tr>
+<tr>
+<td>PID</td>
+<td>唯一进程识别符</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>进程的 CPU 占用率</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>进程的内存占用率</td>
+</tr>
+<tr>
+<td>IN</td>
+<td>进程谦让度，nice值</td>
+</tr>
+<tr>
+<td>PRI</td>
+<td>进程优先级</td>
+</tr>
+<tr>
+<td>TTY</td>
+<td>与进程关联的终端</td>
+</tr>
+<tr>
+<td>STAT</td>
+<td>进程的状态</td>
+</tr>
+</tbody></table>
+<h4 id="top查看进程"><a href="#top查看进程" class="headerlink" title="top查看进程"></a>top查看进程</h4><ul>
+<li><p>top 常用参数</p>
+<p>-p 指定特定的pid进程号进行观察</p>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/linux_2/image_itQ9RBd38Z.png"></p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PID</td>
+<td>进程id</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>程所有者的用户名</td>
+</tr>
+<tr>
+<td>PR</td>
+<td>优先级</td>
+</tr>
+<tr>
+<td>nice</td>
+<td>负值表示高优先级，正值表示低优先级</td>
+</tr>
+<tr>
+<td>VIRT</td>
+<td>进程使用的虚拟内存总量，单位kb。VIRT&#x3D;SWAP+RES</td>
+</tr>
+<tr>
+<td>RES</td>
+<td>进程使用的、未被换出的物理内存大小，单位kb。RES&#x3D;CODE+DATA</td>
+</tr>
+<tr>
+<td>SHR</td>
+<td>共享内存大小，单位kb</td>
+</tr>
+<tr>
+<td>S</td>
+<td>进程状态，D&#x3D;不可中断的睡眠状态 R&#x3D;运行 S&#x3D;睡眠 T&#x3D;跟踪&#x2F;停止 Z&#x3D;僵尸进程</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>上次更新到现在的CPU时间占用百分比</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>进程使用的物理内存百分比</td>
+</tr>
+<tr>
+<td>TIME+</td>
+<td>进程使用的CPU时间总计，单位1&#x2F;100秒</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>命令名&#x2F;命令行</td>
+</tr>
+</tbody></table>
+<h4 id="进程管理-1"><a href="#进程管理-1" class="headerlink" title="进程管理"></a>进程管理</h4><ul>
+<li><p>kill 命令通过PID管理进程</p>
+<p>kill PID号</p>
+</li>
+<li><p>killall 命令通过进程名管理进程(支持通配符）</p>
+<p>killall python*</p>
+</li>
+</ul>
+<h2 id="用户连接"><a href="#用户连接" class="headerlink" title="用户连接"></a>用户连接</h2><p>使用 w命令查看连接主机用户</p>
+<p>使用who -s 命令查看当前登录用户</p>
+<p>使用fuser -k &#x2F;dev&#x2F;pts&#x2F;x</p>
+<p>使用 pkill -Kill -t pts&#x2F;x</p>
+</article><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/31/vm/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/202307301825950.png" onerror="onerror=null;src='/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">渗透测试——mv</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/01/hard_socnet2/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/202307301825950.png" onerror="onerror=null;src='/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">hard_socnet2</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/%5Cimg%5C723.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="https://twikoo-magic.oss-cn-hangzhou.aliyuncs.com/Coolapk/coolapk_emotion_48_weiweiyixiao.png" alt="status"/></div></div><div class="author-info__description"><p style="color:white;">这有关于Linux配置、Windows配置、网络安全的问题和看法，还有文章翻译和分享。<br>相信你可以在这里找到对你有用的知识和教程</p></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">倾黎</h1><div class="author-info__desc">按时下班，及时摸鱼</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/QingLiil" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/372204786" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E5%91%BD%E4%BB%A42"><span class="toc-number">1.</span> <span class="toc-text">Linux 命令2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.0.1.</span> <span class="toc-text">文件查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#linux-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">linux 分页查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#file-%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">file 查看文件类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%91%98%E9%80%89"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">文件摘选</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find%E6%9F%A5%E6%89%BE%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%96%87%E4%BB%B6"><span class="toc-number">1.0.1.4.</span> <span class="toc-text">find查找指定目录下文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%89%93%E5%8C%85"><span class="toc-number">1.1.</span> <span class="toc-text">文件压缩与打包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#gzip-%E7%94%A8%E6%9D%A5%E8%A7%A3%E5%8E%8B%E4%B8%8E%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">gzip 用来解压与压缩文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tar-%E5%8F%AF%E6%89%93%E5%8C%85%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E5%88%B0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%86%85"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">tar  可打包多个文件打包到一个文件内</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unzip-%E8%A7%A3%E5%8E%8Bzip%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">unzip 解压zip文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4%C2%B7%E8%BF%9E%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">文件命令·连接文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">vim 基础操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E5%8F%96%E5%88%97%E6%88%96%E5%AD%97%E6%AE%B5"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">提取列或字段</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rpm-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">rpm 软件安装与管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rpm%E8%BD%AF%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">rpm软件查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dnf%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">dnf软件安装与管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dnf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">dnf配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dnf-%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E5%8D%87%E7%BA%A7"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">dnf 软件包的升级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dnf%E8%BD%AF%E4%BB%B6%E5%8E%9F%E7%9A%84%E5%90%AF%E7%94%A8%E4%B8%8E%E7%A6%81%E6%AD%A2"><span class="toc-number">1.3.0.5.</span> <span class="toc-text">dnf软件原的启用与禁止</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">磁盘管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%82%E8%BD%BD%E7%A3%81%E7%9B%98fastab"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">挂载磁盘fastab</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dump"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">dump</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%8C%BA%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8"><span class="toc-number">1.4.0.3.</span> <span class="toc-text">分区工具使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fdisk-%E5%88%86%E5%8C%BA%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.4.0.4.</span> <span class="toc-text">fdisk 分区工具使用流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fdisk%E4%BF%AE%E6%94%B9%E5%88%86%E5%8C%BA%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.4.0.5.</span> <span class="toc-text">fdisk修改分区类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gpt-%E5%88%86%E5%8C%BA"><span class="toc-number">1.4.0.6.</span> <span class="toc-text">gpt 分区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8F%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-number">1.4.0.7.</span> <span class="toc-text">交互式硬盘分区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E4%BA%A4%E4%BA%92%E5%BC%8F"><span class="toc-number">1.4.0.8.</span> <span class="toc-text">非交互式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%A1%AC%E7%9B%98%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.4.0.9.</span> <span class="toc-text">查看硬盘格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%A1%AC%E7%9B%98"><span class="toc-number">1.4.0.10.</span> <span class="toc-text">格式化硬盘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98"><span class="toc-number">1.4.0.11.</span> <span class="toc-text">挂载硬盘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%96%E6%B6%88%E6%8C%82%E8%BD%BD"><span class="toc-number">1.4.0.12.</span> <span class="toc-text">取消挂载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%8D%B7%E7%9A%84%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.0.13.</span> <span class="toc-text">逻辑卷的管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E9%80%BB%E8%BE%91%E5%8D%B7-%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%8D%B7"><span class="toc-number">1.4.0.14.</span> <span class="toc-text">管理逻辑卷-创建物理卷</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BALVM%E5%8D%B7%E7%BB%84-VG"><span class="toc-number">1.4.0.15.</span> <span class="toc-text">创建LVM卷组(VG)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VG%E6%89%A9%E5%AE%B9"><span class="toc-number">1.4.0.16.</span> <span class="toc-text">VG扩容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BALVM-%E7%9A%84%E9%80%BB%E8%BE%91%E5%8D%B7"><span class="toc-number">1.4.0.17.</span> <span class="toc-text">创建LVM 的逻辑卷</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%8D%B7%E5%AE%B9%E9%87%8F%E7%9A%84%E5%8F%98%E6%9B%B4"><span class="toc-number">1.4.0.18.</span> <span class="toc-text">逻辑卷容量的变更</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%8D%B7%E6%89%A9%E5%AE%B9"><span class="toc-number">1.4.0.19.</span> <span class="toc-text">逻辑卷扩容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%8D%B7%E7%BC%A9%E5%AE%B9"><span class="toc-number">1.4.0.20.</span> <span class="toc-text">逻辑卷缩容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">计划任务管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%A8%E6%9C%9F%E6%80%A7%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">周期性任务</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86"><span class="toc-number">1.6.</span> <span class="toc-text">网络管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E7%BD%91%E5%8D%A1%E6%9C%8D%E5%8A%A1%EF%BC%9Asystemctl-restart-NetworkManager"><span class="toc-number">1.6.0.1.</span> <span class="toc-text">重启网卡服务：systemctl restart NetworkManager</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD"><span class="toc-number">1.6.0.2.</span> <span class="toc-text">查看网络性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8ss%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E5%A5%97%E6%8E%A5%E8%AF%8D%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF%EF%BC%8C%E5%8A%A0%E4%B8%8A%E5%8F%82%E6%95%B0%E5%8F%AF%E8%BF%87%E6%BB%A4%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="toc-number">1.6.0.3.</span> <span class="toc-text">使用ss命令查看套接词统计信息，加上参数可过滤不同类型的套接字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF"><span class="toc-number">1.6.0.4.</span> <span class="toc-text">查看网络信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nmcli-%E5%88%9B%E5%BB%BA%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.6.0.5.</span> <span class="toc-text">nmcli 创建连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81%E5%90%AF%E7%94%A8-%E5%85%B3%E9%97%AD"><span class="toc-number">1.6.0.6.</span> <span class="toc-text">将连接状态启用&#x2F;关闭</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9nmcli%E5%B1%9E%E6%80%A7"><span class="toc-number">1.6.0.7.</span> <span class="toc-text">修改nmcli属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1"><span class="toc-number">1.6.0.8.</span> <span class="toc-text">路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%B4%E6%97%B6%E6%B7%BB%E5%8A%A0%E8%B7%AF%E7%94%B1"><span class="toc-number">1.6.0.9.</span> <span class="toc-text">临时添加路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%B7%AF%E7%94%B1"><span class="toc-number">1.6.0.10.</span> <span class="toc-text">删除路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E5%90%8D%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.6.0.11.</span> <span class="toc-text">主机名设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">1.6.0.12.</span> <span class="toc-text">进程管理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E6%95%B4%E8%BF%9B%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.6.1.</span> <span class="toc-text">调整进程优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nice-%E4%BD%BF%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">nice 使用语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#renice-%E4%BD%BF%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">renice 使用语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x20-%E5%89%8D%E5%90%8E%E5%8F%B0%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.7.</span> <span class="toc-text"> 前后台进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.7.1.</span> <span class="toc-text">查看进程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B-ps%E3%80%81top"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">查看进程 - ps、top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#top%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">top查看进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86-1"><span class="toc-number">1.7.1.3.</span> <span class="toc-text">进程管理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.8.</span> <span class="toc-text">用户连接</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/06/01/west-wild%20v-0.1/" title="渗透测试——west-wild v-0.1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/202307301825950.png" onerror="this.onerror=null;this.src='/404.jpg'" alt="渗透测试——west-wild v-0.1"/></a><div class="content"><a class="title" href="/2024/06/01/west-wild%20v-0.1/" title="渗透测试——west-wild v-0.1">渗透测试——west-wild v-0.1</a><time datetime="2024-06-01T09:35:43.607Z" title="发表于 2024-06-01 17:35:43">2024-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/01/%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%89%93%E9%9D%B6%201/" title="渗透测试——跟我一起打靶"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/202307301825950.png" onerror="this.onerror=null;this.src='/404.jpg'" alt="渗透测试——跟我一起打靶"/></a><div class="content"><a class="title" href="/2024/06/01/%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%89%93%E9%9D%B6%201/" title="渗透测试——跟我一起打靶">渗透测试——跟我一起打靶</a><time datetime="2024-06-01T09:35:43.607Z" title="发表于 2024-06-01 17:35:43">2024-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/01/prime%E9%9D%B6%E5%9C%BA/" title="渗透测试——prime"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/202307301825950.png" onerror="this.onerror=null;this.src='/404.jpg'" alt="渗透测试——prime"/></a><div class="content"><a class="title" href="/2024/06/01/prime%E9%9D%B6%E5%9C%BA/" title="渗透测试——prime">渗透测试——prime</a><time datetime="2024-06-01T09:35:43.541Z" title="发表于 2024-06-01 17:35:43">2024-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/01/php%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="php面向对象"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/404.jpg'" alt="php面向对象"/></a><div class="content"><a class="title" href="/2024/06/01/php%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="php面向对象">php面向对象</a><time datetime="2024-06-01T09:35:43.504Z" title="发表于 2024-06-01 17:35:43">2024-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/01/hard_socnet2/" title="hard_socnet2"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/202307301825950.png" onerror="this.onerror=null;this.src='/404.jpg'" alt="hard_socnet2"/></a><div class="content"><a class="title" href="/2024/06/01/hard_socnet2/" title="hard_socnet2">hard_socnet2</a><time datetime="2024-06-01T09:35:43.502Z" title="发表于 2024-06-01 17:35:43">2024-06-01</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="倾黎" target="_blank">倾黎</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">4</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/linux/" style="font-size: 0.88rem;">linux<sup>1</sup></a><a href="/tags/parime/" style="font-size: 0.88rem;">parime<sup>2</sup></a><a href="/tags/php/" style="font-size: 0.88rem;">php<sup>1</sup></a><a href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" style="font-size: 0.88rem;">应急响应<sup>1</sup></a><a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" style="font-size: 0.88rem;">渗透测试<sup>6</sup></a><a href="/tags/%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E6%89%93%E9%9D%B6/" style="font-size: 0.88rem;">跟我一起打靶<sup>4</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
