@@ -1,3 +1,3 @@
-var posts=["2024/06/02/Hacker_Kid-v1.0.1/","2024/06/02/EvilBox-one/","2024/06/01/Linux 命令2/","2023/07/29/Linux 应急响应/","2025/05/25/Vikings/","2024/06/01/hard_socnet2/","2024/06/01/php面向对象/","2024/06/01/prime靶场/","2023/07/31/vm/","2024/06/01/west-wild v-0.1/","2024/06/01/跟我一起打靶 1/","2023/07/31/跟我一起打靶 2/"];function toRandomPost(){
+var posts=["2024/06/02/EvilBox-one/","2024/06/02/Hacker_Kid-v1.0.1/","2023/07/29/Linux 应急响应/","2024/06/01/Linux 命令2/","2025/05/25/Vikings/","2024/06/01/hard_socnet2/","2024/06/01/php面向对象/","2024/06/01/prime靶场/","2024/06/01/跟我一起打靶 1/","2023/07/31/vm/","2024/06/01/west-wild v-0.1/","2023/07/31/跟我一起打靶 2/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
